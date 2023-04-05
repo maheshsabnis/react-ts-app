@@ -1,0 +1,37 @@
+import { ProductInfo } from "../../props";
+
+export const getProductsList=()=>{
+    return {
+        type:'GET_PRODUCTS'
+    }
+};
+
+export const addNewProduct=(product:ProductInfo)=>{
+    return {
+        type:'ADD_NEW_PRODUCT',
+        payload: product
+    }
+};
+
+export const getProduct=(id:number)=>{
+    return {
+        type:'GET_SINGLE_PRODUCT',
+        id
+    }
+};
+
+export const updateProduct=(product:ProductInfo)=>{
+    return {
+        type:'UPDATE_PRODUCT',
+        product
+    }
+};
+
+export const deleteProduct=(id:number)=>{
+    return {
+        type:'DELETE_PRODUCT',
+        id
+    }
+};
+
+
