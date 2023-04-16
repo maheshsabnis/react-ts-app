@@ -13,7 +13,7 @@ export const initialState = {
         return { ...state, loading: true }
       case actions.POST_PRODUCT_SUCCESS:
           console.log(`Inside the post products success reducer ${JSON.stringify(action.payload)}`);
-        return { products: action.payload, loading: false, hasErrors: false }
+        return { product: action.payload, loading: false, hasErrors: false }
       case actions.POST_PRODUCT_FAILURE:
         return { ...state, loading: false, hasErrors: true }
       default:

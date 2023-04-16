@@ -2,8 +2,7 @@ import { Action, AnyAction } from "redux";
 import * as actions from '../actions/getactions';
 import { IAppState } from "../../sagasapp/state/appstate";
 import { ProductInfo } from "../../props";
-import { getProducts } from "../actions/getactions";
-import { postProduct } from "../actions/postaction";
+ 
 
 
 

@@ -1,24 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import createSagaMiddleware from 'redux-saga';
+import { Provider } from 'react-redux';
+import { configureStore, applyMiddleware, getDefaultMiddleware, compose} from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
- 
-import { QueryClient, QueryClientProvider } from 'react-query'
-import RQueryComponent from './reactquery/rquerycompopnent';
-import UseCustomHookReducerComponent from './withhooks/usereducercustomhook';
 
-const queryClient = new QueryClient();
+ 
+import {reducer} from './thunkapp/reducers/index';
+import MainReduxThunkComponent from './thunkapp/mainreduxthunkcomponent';
+import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
+
+
+//const middleware = compose(applyMiddleware(thunk));
+const middleware = [...getDefaultMiddleware()];
+
+const store = configureStore({
+   reducer:reducer,
+   middleware
+});
+
+
+
+ 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    {/* <QueryClientProvider client={queryClient}>
-      <RQueryComponent></RQueryComponent>
-    </QueryClientProvider> */}
-    <UseCustomHookReducerComponent></UseCustomHookReducerComponent>
+     <Provider store={store}>
+     <MainReduxThunkComponent></MainReduxThunkComponent>
+     </Provider>
   </React.StrictMode>
 );
 
