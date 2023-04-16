@@ -7,6 +7,7 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
  
 import { QueryClient, QueryClientProvider } from 'react-query'
 import RQueryComponent from './reactquery/rquerycompopnent';
+import UseCustomHookReducerComponent from './withhooks/usereducercustomhook';
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
@@ -14,9 +15,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
+    {/* <QueryClientProvider client={queryClient}>
       <RQueryComponent></RQueryComponent>
-    </QueryClientProvider>
+    </QueryClientProvider> */}
+    <UseCustomHookReducerComponent></UseCustomHookReducerComponent>
   </React.StrictMode>
 );
 
