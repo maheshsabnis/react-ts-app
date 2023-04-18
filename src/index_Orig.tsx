@@ -27,7 +27,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <App name={message} profile={mydetails} skills={technologies}/> */}
-  <UseEffectComponent></UseEffectComponent>
+    <ProductComponent></ProductComponent>
   </React.StrictMode>
 );
 

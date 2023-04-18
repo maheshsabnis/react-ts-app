@@ -19,6 +19,7 @@ export class ProductHttpService {
     }
 
     async postProduct(product:ProductInfo): Promise<ProductInfo> {
+        console.log('service called');
         let response = await axios.post<ProductInfo>(`${this.url}/api/ProductsAPI`, product, {
             headers: {
                 'Content-Type':'application/json'
